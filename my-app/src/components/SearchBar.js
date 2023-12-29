@@ -32,18 +32,24 @@ function SearchBar () {
 
     // Function checks query for matches resets terms list
     function checkTerm (e) {
+        e.preventDefault();
         if (inputRef.current.value === "") return;
         setTerms(prev => {
             return [...prev,inputRef.current.value]
         });
         // Route user to appropriate webpage iff only one query in search
-        if (foundTerms.length === 1) return(
+        if (foundTerms[0] === "GitHub") return(
+            window.location.href = 'https://www.github.com/adrianlamlh');
+        else if (foundTerms[0] === "Linkedin") return(
+            window.location.href = 'https://www.linkedin.com/in/adrianlhlam');
+        else return(
             navigate(termToPagename[foundTerms[0]]));
         inputRef.current.value = "";
     };
 
     // Modifies visibility for form
     const toggleVisibility = () => {
+        // if (formRef.current.contains(e.target))
         setVisible(!visibility);
         setSearchText("");
     };
@@ -56,6 +62,7 @@ function SearchBar () {
                 setVisible(false);
                 setSearchText("Message Adrian's AI...");
             }
+            else {setVisible(true);}
         };
         document.addEventListener('click', handleClickOutside);
         return () => {
