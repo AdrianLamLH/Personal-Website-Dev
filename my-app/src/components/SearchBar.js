@@ -1,7 +1,7 @@
 import React from 'react'
 import FetchAPI from './FetchAPI';
 import { useState, useEffect, useRef } from 'react';
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import FadeIn from "react-fade-in";
 
 /**
@@ -15,6 +15,7 @@ function SearchBar () {
     const [searchText,setSearchText] = useState("Message Adrian's AI...");
     const inputRef = useRef();
     const formRef = useRef();
+    const navigate = useNavigate();
 
     // Filtered list of terms from current state of search query
     const foundTerms = terms.filter((term) => {return term.toLowerCase().includes(query.toLowerCase())});
@@ -26,8 +27,8 @@ function SearchBar () {
             return [...prev,inputRef.current.value]
         });
         // Route user to appropriate webpage iff only one query in search
-        // if (foundTerms.length === 1) return(useNavigate(foundTerms[0]));
-        // inputRef.current.value = "";
+        if (foundTerms.length === 1) return(navigate(foundTerms[0]));
+        inputRef.current.value = "";
     };
 
     // Modifies visibility for form

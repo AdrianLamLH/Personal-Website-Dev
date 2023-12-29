@@ -4,6 +4,7 @@ function Projects() {
   return (
     <div className="Home">
       <header className="Home-header">
+        <h1 className="Page-header">Projects</h1>
       </header>
     </div>
   )
