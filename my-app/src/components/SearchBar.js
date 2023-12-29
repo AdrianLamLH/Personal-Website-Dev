@@ -1,14 +1,23 @@
 import React from 'react'
 import FetchAPI from './FetchAPI';
-import { useState, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
+
+/**
+ * This component renders the search bar for querying pages.
+**/
 
 function SearchBar () {
     const [query, setQuery] = useState("");
     const [terms, setTerms] = useState(["hey", "hello" ,"blaeh", "boooboo", "yeay","hooray"])
     const [visibility, setVisible] = useState(false);
+    const [searchText,setSearchText] = useState("Message Adrian's AI...");
     const inputRef = useRef();
+    const formRef = useRef();
+
+    // Filtered list of terms from current state of search query
     const foundTerms = terms.filter((term) => {return term.toLowerCase().includes(query.toLowerCase())});
 
+    // Function checks query for matches resets terms list
     function checkTerm (e) {
         if (inputRef.current.value === "") return;
         setTerms(prev => {
@@ -18,17 +27,36 @@ function SearchBar () {
         inputRef.current.value = "";
     };
 
+    // Modifies visibility for form
     const toggleVisibility = () => {
         setVisible(!visibility);
+        setSearchText("");
     };
+
+    // Event listener for clicks on/off of input box
+    // conditional visibility on element if focused
+    useEffect(() => {
+        const handleClickOutside = (e) => {
+            if (formRef.current && !formRef.current.contains(e.target)) {
+                setVisible(false);
+                setSearchText("Message Adrian's AI...");
+            }
+        };
+        document.addEventListener('click', handleClickOutside);
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+        };
+    }, []);
 
     return (
         <>
-        {/* <button onClick={toggleVisibility}></button> */}
+        {/* Condition for showing filtered search terms list */}
         {visibility && foundTerms.map(term => <ul>{term}</ul>)}
-        <form action="" onSubmit={checkTerm} onClick={toggleVisibility}>
+        <form action="" onSubmit={checkTerm} ref={formRef} onClick={toggleVisibility}>
             <div className="search-form">
-                <input className="search-box" name="query" placeholder="Message Adrian's AI..."  value={query} ref={inputRef} onChange={(e) => setQuery(e.target.value)}/>
+                {/* Dynamic input box changes as user types */}
+                <input className="search-box" name="query" placeholder={searchText}  value={query} ref={inputRef} onChange={(e) => setQuery(e.target.value)}/>
+                {/* Call API fetch component */}
                 <FetchAPI></FetchAPI>
             </div>
         </form>
