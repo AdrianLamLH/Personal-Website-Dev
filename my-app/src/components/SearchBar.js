@@ -1,6 +1,7 @@
 import React from 'react'
 import FetchAPI from './FetchAPI';
 import { useState, useEffect, useRef } from 'react';
+// import { useNavigate } from "react-router-dom";
 import FadeIn from "react-fade-in";
 
 /**
@@ -24,8 +25,9 @@ function SearchBar () {
         setTerms(prev => {
             return [...prev,inputRef.current.value]
         });
-        alert(foundTerms)
-        inputRef.current.value = "";
+        // Route user to appropriate webpage iff only one query in search
+        // if (foundTerms.length === 1) return(useNavigate(foundTerms[0]));
+        // inputRef.current.value = "";
     };
 
     // Modifies visibility for form
