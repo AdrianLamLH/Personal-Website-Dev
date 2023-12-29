@@ -8,13 +8,22 @@ function SearchBar () {
         const searchTerms = searchTerm.map((term) => 
             <li>{term}</li>
         );
+
+        function checkTerm (props) {
+            const foundList = searchTerms.includes(props.value)
+            return (
+                <ul>
+                    {foundList}
+                </ul>
+            )
+        }
     return (
         <form action="">
-            <ul>
+            {/* <ul>
                 {searchTerms}
-            </ul>
+            </ul> */}
             <div className="search-form">
-                <input className="search-box" name="query" placeholder="Message Adrian's AI..."  value={query} onChange={(e) => setQuery(e.target.value)}/>
+                <input className="search-box" name="query" placeholder="Message Adrian's AI..."  value={query} onSubmit={(e) => checkTerm(e.target.value)} onChange={(e) => setQuery(e.target.value)}/>
                 <FetchAPI></FetchAPI>
             </div>
         </form>
