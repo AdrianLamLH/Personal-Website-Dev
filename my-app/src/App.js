@@ -15,6 +15,7 @@ function App() {
         </div>
         <h1 className="logo-header-headline">Ask me a question!</h1>
 
+
         <SearchBar></SearchBar>
 
       </header>

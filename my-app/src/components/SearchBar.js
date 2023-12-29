@@ -1,6 +1,7 @@
 import React from 'react'
 import FetchAPI from './FetchAPI';
 import { useState, useEffect, useRef } from 'react';
+import FadeIn from "react-fade-in";
 
 /**
  * This component renders the search bar for querying pages.
@@ -8,7 +9,7 @@ import { useState, useEffect, useRef } from 'react';
 
 function SearchBar () {
     const [query, setQuery] = useState("");
-    const [terms, setTerms] = useState(["hey", "hello" ,"blaeh", "boooboo", "yeay","hooray"])
+    const [terms, setTerms] = useState(["About me", "Resume", "Transcript" ,"Past Projects", "GitHub", "Linkedin"])
     const [visibility, setVisible] = useState(false);
     const [searchText,setSearchText] = useState("Message Adrian's AI...");
     const inputRef = useRef();
@@ -51,7 +52,9 @@ function SearchBar () {
     return (
         <>
         {/* Condition for showing filtered search terms list */}
+        <FadeIn delay="100">
         {visibility && foundTerms.map(term => <ul>{term}</ul>)}
+        </FadeIn>
         <form action="" onSubmit={checkTerm} ref={formRef} onClick={toggleVisibility}>
             <div className="search-form">
                 {/* Dynamic input box changes as user types */}
