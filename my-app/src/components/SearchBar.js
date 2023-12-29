@@ -17,6 +17,16 @@ function SearchBar () {
     const formRef = useRef();
     const navigate = useNavigate();
 
+    // Converts page title to file name
+    const termToPagename = {
+        "About me":"About",
+        "Resume":"Resume",
+        "Transcript":"Transcript",
+        "Past Projects":"Projects",
+        "GitHub":"GitHub",
+        "Linkedin":"Linkedin"
+    }
+
     // Filtered list of terms from current state of search query
     const foundTerms = terms.filter((term) => {return term.toLowerCase().includes(query.toLowerCase())});
 
@@ -27,7 +37,8 @@ function SearchBar () {
             return [...prev,inputRef.current.value]
         });
         // Route user to appropriate webpage iff only one query in search
-        if (foundTerms.length === 1) return(navigate(foundTerms[0]));
+        if (foundTerms.length === 1) return(
+            navigate(termToPagename[foundTerms[0]]));
         inputRef.current.value = "";
     };
 
