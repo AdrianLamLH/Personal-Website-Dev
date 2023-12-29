@@ -1,53 +1,74 @@
 .logo-header {
     width:160px;
+}
+
+.logo-header-headline {
+  font-size:35px;
+}
+
+
+/* container for search form */
+.search-form-bar {
+  width:650px;
+  height:48px;
+  margin:0 auto;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  background-color: darkslategrey;
+  padding:8px;
+  outline:2px solid grey;
+}
+
+/* search input box */
+.search-box {
+  width:88%;
+  background-color: rgba(0,0,0,0);
+  box-sizing: border-box;
+  border:none;
+  outline:none;
+  border-radius: 15px;
+  font-family: "Calibri", Arial, monospace;
+  color:rgb(225, 232, 232);
+  font-size: calc(10px + 2vmin);
+  text-indent:2%;
+}
+
+.search-form {
+  transition-delay:150ms;
+}
+
+/* submit search button */
+.submit-button {
+  width: 10%;
+  height:100%;
+  background-color: rgb(89, 110, 110);
+  box-sizing:border-box;
+  border: none;
+  border-radius: 15px;
+  align-self:center;
+}
+
+.submit-logo {
+  width:100%;
+  border-radius: 100%;
+}
+
+
+
+/* Media query for responsiveness */
+@media (max-width: 600px) {
+  .search-form-bar {
+    width: 100%; /* Make the search-form full width on smaller screens */
+    flex-direction: column; /* Stack input and button elements vertically */
   }
-  
-  .logo-header-headline {
-    font-size:35px;
+
+  .search-box,
+  button {
+    width: 100%; /* Make input and button full width on smaller screens */
+    margin-bottom: 10px; /* Add some spacing between input and button */
   }
-  
-  
-  /* container for search form */
-  .search-form {
-    width:650px;
-    height:48px;
-    margin:0 auto;
-    border-radius: 15px;
-    display: flex;
-    justify-content: space-between;
-    background-color: darkslategrey;
-    padding:8px;
-    outline:2px solid grey;
-  }
-  
-  /* search input box */
-  .search-box {
-    width:88%;
-    background-color: rgba(0,0,0,0);
-    box-sizing: border-box;
-    border:none;
-    outline:none;
-    border-radius: 15px;
-    font-family: "Calibri", Arial, monospace;
-    color:rgb(225, 232, 232);
-    font-size: calc(10px + 2vmin);
-    text-indent:2%;
-  }
-  
-  /* Media query for responsiveness */
-  @media (max-width: 600px) {
-    .search-form {
-      width: 100%; /* Make the search-form full width on smaller screens */
-      flex-direction: column; /* Stack input and button elements vertically */
-    }
-  
-    .search-box,
-    button {
-      width: 100%; /* Make input and button full width on smaller screens */
-      margin-bottom: 10px; /* Add some spacing between input and button */
-    }
-  }
-  
+
   /* submit search button */
   .submit-button {
     width: 10%;
@@ -63,3 +84,4 @@
     width:100%;
     border-radius: 100%;
   }
+}

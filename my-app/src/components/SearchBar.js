@@ -55,8 +55,8 @@ function SearchBar () {
         <FadeIn delay="100">
         {visibility && foundTerms.map(term => <ul>{term}</ul>)}
         </FadeIn>
-        <form action="" onSubmit={checkTerm} ref={formRef} onClick={toggleVisibility}>
-            <div className="search-form">
+        <form action="" className="search-form" onSubmit={checkTerm} ref={formRef} onClick={toggleVisibility}>
+            <div className="search-form-bar">
                 {/* Dynamic input box changes as user types */}
                 <input className="search-box" name="query" placeholder={searchText}  value={query} ref={inputRef} onChange={(e) => setQuery(e.target.value)}/>
                 {/* Call API fetch component */}
