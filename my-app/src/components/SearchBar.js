@@ -1,29 +1,37 @@
 import React from 'react'
 import FetchAPI from './FetchAPI';
-import { useState, useEffect } from 'react';
+import { useState, useRef } from 'react';
+
 function SearchBar () {
     // const SearchBox = () => {}
-        const [query, setQuery] = useState("");
-        const searchTerm = ["hey", "hello" ,"blaeh", "boooboo", "yeay","hooray"];
-        const searchTerms = searchTerm.map((term) => 
-            <li>{term}</li>
-        );
+    const [query, setQuery] = useState("");
+    const inputRef = useRef();
 
-        function checkTerm (props) {
-            const foundList = searchTerms.includes(props.value)
-            return (
-                <ul>
-                    {foundList}
-                </ul>
-            )
-        }
+    function checkTerm (e) {
+        const searchTerms = ["hey", "hello" ,"blaeh", "boooboo", "yeay","hooray"];
+
+        // const searchTerms = searchTerm.map((term) => 
+        //     <li>{term}</li>
+        // );
+        const foundList = searchTerms.includes(inputRef.current.value)
+        // alert('it works!');
+
+        // e.preventDefault();
+        alert(inputRef.current.value)
+        return (
+            <ul>
+                {foundList}
+            </ul>
+        )
+    };
+
     return (
-        <form action="">
+        <form action="" onSubmit={checkTerm}>
             {/* <ul>
                 {searchTerms}
             </ul> */}
             <div className="search-form">
-                <input className="search-box" name="query" placeholder="Message Adrian's AI..."  value={query} onSubmit={(e) => checkTerm(e.target.value)} onChange={(e) => setQuery(e.target.value)}/>
+                <input className="search-box" name="query" placeholder="Message Adrian's AI..."  value={query} ref={inputRef} onChange={(e) => setQuery(e.target.value)}/>
                 <FetchAPI></FetchAPI>
             </div>
         </form>
