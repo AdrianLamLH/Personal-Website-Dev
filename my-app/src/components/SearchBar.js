@@ -37,14 +37,16 @@ function SearchBar () {
         setTerms(prev => {
             return [...prev,inputRef.current.value]
         });
+        inputRef.current.value = "";
         // Route user to appropriate webpage iff only one query in search
         if (foundTerms[0] === "GitHub") return(
             window.location.href = 'https://www.github.com/adrianlamlh');
         else if (foundTerms[0] === "Linkedin") return(
             window.location.href = 'https://www.linkedin.com/in/adrianlhlam');
+        else if (foundTerms[0] === "Resume") return(
+                window.location.href = 'https://pdfhost.io/v/Fb9pfBrpn_Resume');
         else return(
             navigate(termToPagename[foundTerms[0]]));
-        inputRef.current.value = "";
     };
 
     // Modifies visibility for form
