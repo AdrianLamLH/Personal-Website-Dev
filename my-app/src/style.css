@@ -95,14 +95,48 @@
   border-radius: 100%;
 }
 
+/* return button */
+.return-button {
+  min-width: 10vh;
+  background-color: rgb(89, 110, 110);
+  border:none;
+  border-radius: 15px;
+  /* margin:px; */
+}
+
+.return-container {
+  width:5%;
+  /* min-height:30vh; */
+  display:inline-block;
+  justify-content: center;
+  position:relative;
+  padding-left: 3vh;
+}
+
+.return-logo {
+  width:70%;
+  border-radius: 100%;
+}
+
 .Page-header {
+  width:50%;
   align-items: center;
-  top:0;
-  position:fixed;
-  display:flex;
+  justify-content: space-between;
+  position:relative;
+  display:inline-block;
   font-size: 35px;
 }
 
+.Main-header {
+  background-color: #282c34;
+  min-height: 15vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
 
 
 /* Media query for responsiveness */
