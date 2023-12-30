@@ -1,9 +1,13 @@
 import './style.css'
+import ReturnButton from './components/ReturnButton'
 function Transcript() {
   return (
     <div className="Home">
-      <header className="Home-header">
-        <h1 className="Page-header">Transcript</h1>
+      <header>
+        <div className="Main-header">
+          <ReturnButton></ReturnButton>
+          <h1 className="Page-header">Transcript</h1>
+        </div>
       </header>
     </div>
   )
