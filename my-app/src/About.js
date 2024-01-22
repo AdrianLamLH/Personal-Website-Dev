@@ -23,7 +23,7 @@ function About() {
           </p>
         </div>
         <div className="Main-added-info">
-        <img src={'/assets/japan-biker.jpeg'} className="Biker-image" alt="Adrian's Police Debut"></img>
+        <img src={'/assets/japan-biker.png'} className="Biker-image" alt="Adrian's Police Debut"></img>
         <em className="Main-info Added-info">*A nice Japanese lady took this for me after my trip to Japan. It commemorates the first-time I got to practice my Japanese skills!*</em>
         </div>
       </body>
