@@ -4,6 +4,7 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import './index.css';
 import App from './App';
 import About from "./About"
+import Error from "./Error"
 // import Transcript from "./Transcript"
 import Projects from "./Projects"
 import reportWebVitals from './reportWebVitals';
@@ -17,6 +18,7 @@ root.render(
         <Route path="/about" element={<About/>} />
         {/* <Route path="/transcript" element={<Transcript/>} /> */}
         <Route path="/projects" element={<Projects/>} />
+        <Route path="/Error" element={<Error/>} />
       </Routes>
     </HashRouter>
   </React.StrictMode>

@@ -260,6 +260,10 @@
   font-size:18px;
 }
 
+.Cat-cycle {
+  max-width:600px;
+}
+
 /* Media query for responsiveness */
 @media (max-width: 640px) {
   .Biker-image {
@@ -340,5 +344,17 @@
   .Project-info {
     width:98%;
     padding-bottom:0;
+  }
+  .return-logo {
+    /* max-width:20%; */
+    max-height:max-content;
+    border-radius: 100%;
+  }
+  /* .return-container {
+    width:16%;
+  } */
+  .Cat-cycle {
+    max-width:60%;
+    width:65vh;
   }
 }

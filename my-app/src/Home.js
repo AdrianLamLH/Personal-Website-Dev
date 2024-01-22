@@ -11,7 +11,7 @@ function Home() {
         <div className="logo-header">
           <img src={'/assets/portrait-circle.png'} className="Home-logo" alt="logo" />
         </div>
-        <h1 className="logo-header-headline">Ask me a question!</h1>
+        <h1 className="logo-header-headline">Learn more about me!</h1>
 
 
         <SearchBar></SearchBar>

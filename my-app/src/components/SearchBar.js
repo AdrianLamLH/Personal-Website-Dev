@@ -12,7 +12,7 @@ function SearchBar () {
     const [query, setQuery] = useState("");
     const [terms, setTerms] = useState(["About me", "Resume" ,"Past Projects", "GitHub", "Linkedin"])
     const [visibility, setVisible] = useState(false);
-    const [searchText,setSearchText] = useState("Message Adrian's AI...");
+    const [searchText,setSearchText] = useState("What do you want to know...");
     const inputRef = useRef();
     const formRef = useRef();
     const navigate = useNavigate();
@@ -24,7 +24,8 @@ function SearchBar () {
         // "Transcript":"Transcript",
         "Past Projects":"Projects",
         "GitHub":"GitHub",
-        "Linkedin":"Linkedin"
+        "Linkedin":"Linkedin",
+        "undefined":"Error"
     }
 
     // Filtered list of terms from current state of search query
@@ -46,6 +47,7 @@ function SearchBar () {
         else if (foundTerms[0] === "Resume") return(
                 window.location.href = 'https://pdfhost.io/v/Fb9pfBrpn_Resume');
         else return(
+            // alert(termToPagename[foundTerms[0]]));
             navigate(termToPagename[foundTerms[0]]));
     };
 
@@ -62,7 +64,7 @@ function SearchBar () {
         const handleClickOutside = (e) => {
             if (formRef.current && !formRef.current.contains(e.target)) {
                 setVisible(false);
-                setSearchText("Message Adrian's AI...");
+                setSearchText("What do you want to know...");
             }
             else {setVisible(true);}
         };
