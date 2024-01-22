@@ -10,7 +10,7 @@ import FadeIn from "react-fade-in";
 
 function SearchBar () {
     const [query, setQuery] = useState("");
-    const [terms, setTerms] = useState(["About me", "Resume", "Transcript" ,"Past Projects", "GitHub", "Linkedin"])
+    const [terms, setTerms] = useState(["About me", "Resume" ,"Past Projects", "GitHub", "Linkedin"])
     const [visibility, setVisible] = useState(false);
     const [searchText,setSearchText] = useState("Message Adrian's AI...");
     const inputRef = useRef();
@@ -21,7 +21,7 @@ function SearchBar () {
     const termToPagename = {
         "About me":"About",
         "Resume":"Resume",
-        "Transcript":"Transcript",
+        // "Transcript":"Transcript",
         "Past Projects":"Projects",
         "GitHub":"GitHub",
         "Linkedin":"Linkedin"
