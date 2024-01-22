@@ -22,9 +22,11 @@ function About() {
             On campus, I sing bass for my On That Note A Capella at UCLA, I'm a big fan of intramural basketball games, and I help organize Math-oriented events for other Mathematics enthusiasts like me!
           </p>
         </div>
+        <div className="Main-added-info">
         <img src={'/assets/japan-biker.jpeg'} className="Biker-image" alt="Adrian's Police Debut"></img>
+        <em className="Main-info Added-info">*A nice Japanese lady took this for me after my trip to Japan. It commemorates the first-time I got to practice my Japanese skills!*</em>
+        </div>
       </body>
-      <em className="Main-info" style={{paddingBottom:'0px',fontSize:'22px'}}>*A nice Japanese lady took this for me after my trip to Japan. It commemorates the first-time I got to practice my Japanese skills!*</em>
     </div>
   )
 }
