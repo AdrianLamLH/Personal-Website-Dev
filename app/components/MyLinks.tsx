@@ -57,7 +57,7 @@ export default function MyLinks() {
             className="bg-black/40 pixel-borders p-6"
           >
             <blockquote className="text-center">
-              <p className="text-sm mb-4 text-pixel-green">"{quote.text}"</p>
+              <p className="text-sm mb-4 text-pixel-green">&quot;{quote.text}&quot;</p>
               <footer className="text-xs text-white/70">- {quote.author}</footer>
             </blockquote>
           </motion.div>

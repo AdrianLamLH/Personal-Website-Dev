@@ -96,7 +96,7 @@ export default function MyLinks() {
                 className="bg-gray-800 rounded-lg p-6 hover:ring-2 hover:ring-pixel-green transition-all duration-300"
               >
                 <blockquote className="text-center">
-                  <p className="text-lg mb-4">"{quote.text}"</p>
+                  <p className="text-lg mb-4">&quot;{quote.text}&quot;</p>
                   <footer className="text-sm text-gray-400">- {quote.author}</footer>
                 </blockquote>
               </motion.div>
