@@ -73,7 +73,7 @@ export default function MyLinks() {
                 className="flex justify-center space-x-8"
               >
                 <a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/AdrianLamLH"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:text-pixel-green transition-colors duration-300 hover:scale-110"
@@ -81,7 +81,7 @@ export default function MyLinks() {
                   <Github size={32} />
                 </a>
                 <a
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://linkedin.com/in/AdrianLHLam"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:text-pixel-green transition-colors duration-300 hover:scale-110"
