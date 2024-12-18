@@ -42,9 +42,9 @@ export default function MyLinks() {
       <main className="pt-20">
         <section className="py-12">
           <div className="container mx-auto px-6">
-            <h2 className="text-4xl font-bold mb-12 text-center hover:text-blue-400 transition-colors duration-300">
-              My Links
-            </h2>
+          <h2 className="text-4xl font-bold mb-12 text-center hover:text-pixel-green transition-colors duration-300">
+            My Links
+          </h2>
             
             {/* Photo Gallery */}
             <div className="mb-16 overflow-hidden">
@@ -76,7 +76,7 @@ export default function MyLinks() {
                   href="https://github.com/yourusername"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:text-blue-400 transition-colors duration-300 hover:scale-110"
+                  className="text-white hover:text-pixel-green transition-colors duration-300 hover:scale-110"
                 >
                   <Github size={32} />
                 </a>
@@ -84,7 +84,7 @@ export default function MyLinks() {
                   href="https://linkedin.com/in/yourusername"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:text-blue-400 transition-colors duration-300 hover:scale-110"
+                  className="text-white hover:text-pixel-green transition-colors duration-300 hover:scale-110"
                 >
                   <Linkedin size={32} />
                 </a>
@@ -93,7 +93,7 @@ export default function MyLinks() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="bg-gray-800 rounded-lg p-6 hover:ring-2 hover:ring-blue-400 transition-all duration-300"
+                className="bg-gray-800 rounded-lg p-6 hover:ring-2 hover:ring-pixel-green transition-all duration-300"
               >
                 <blockquote className="text-center">
                   <p className="text-lg mb-4">"{quote.text}"</p>

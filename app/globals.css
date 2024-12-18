@@ -3,52 +3,86 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  /* Warm deep purple-green to orange gradient */
-  --background-start-rgb: 44, 45, 41; /* Increased green component */
-  --background-end-rgb: 255, 152, 89; /* Added more green tint to orange */
+  --foreground-rgb: 238, 238, 238;
+  --background-start-rgb: 34, 34, 34;
+  --background-end-rgb: 51, 51, 51;
+  --pixel-green: 57, 255, 20;
+  --pixel-green-dark: 47, 210, 17;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
-    135deg, /* Diagonal gradient for more dynamic look */
+    135deg,
     rgb(var(--background-start-rgb)),
-    rgb(251, 143, 123), /* Increased green in middle tone */
     rgb(var(--background-end-rgb))
   );
   min-height: 100vh;
   background-attachment: fixed;
+  image-rendering: pixelated;
 }
 
-/* Custom scrollbar styles */
+/* Pixel border utility class */
+.pixel-borders {
+  border-style: solid;
+  border-width: 4px;
+  border-image-slice: 2;
+  border-image-width: 2;
+  border-image-outset: 0;
+  border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='6' height='6'><path d='M0 2h6M2 0v6' stroke='rgb(57, 255, 20)' fill='none'/></svg>");
+}
+
+/* Retro button styles */
+.retro-button {
+  background: rgb(var(--pixel-green));
+  color: rgb(var(--background-start-rgb));
+  padding: 0.5rem 1rem;
+  border: none;
+  box-shadow: 
+    4px 4px 0 rgba(0,0,0,0.8),
+    inset -4px -4px 0 rgba(0,0,0,0.3);
+  transition: all 0.1s;
+}
+
+.retro-button:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 
+    2px 2px 0 rgba(0,0,0,0.8),
+    inset -2px -2px 0 rgba(0,0,0,0.3);
+}
+
+/* Glowing text effect */
+.glow-text {
+  text-shadow: 
+    0 0 5px rgb(var(--pixel-green)),
+    0 0 10px rgb(var(--pixel-green)),
+    0 0 15px rgb(var(--pixel-green));
+}
+
+/* Update cursor glow */
+.cursor-glow {
+  background: radial-gradient(
+    circle at var(--x) var(--y),
+    rgba(var(--pixel-green), 0.15),
+    transparent 70%
+  );
+}
+
+/* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(251, 143, 123, 0.1); /* Adjusted to match new middle tone */
+  background: rgb(var(--background-start-rgb));
+  border-left: 2px solid rgb(var(--pixel-green));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 152, 89, 0.6); /* Base color */
-  border-radius: 5px;
-  transition: background 0.3s ease; /* Smooth transition for hover effect */
+  background: rgb(var(--pixel-green));
+  border: 2px solid rgb(var(--background-start-rgb));
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(235, 162, 89, 0.8); /* Greener version of the orange for hover */
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-scroll {
-  animation: scroll 30s linear infinite;
+  background: rgb(var(--pixel-green-dark));
 }

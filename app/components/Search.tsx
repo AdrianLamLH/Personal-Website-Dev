@@ -53,28 +53,28 @@ export default function Search({ loadingMessages }: SearchProps) {
 
   return (
     <div className="max-w-2xl mx-auto w-full">
-      <form onSubmit={handleSubmit} className="mb-4">
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Ask me anything about my experience..."
-          className="w-full p-4 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="What do you want to know about me?"
+          className="w-full p-4 bg-black/40 text-white placeholder-white/50 
+                   focus:outline-none font-pixel text-sm border-0"
         />
       </form>
 
       {isLoading && (
-        <div className="text-center text-gray-300 animate-pulse">
+        <div className="text-center text-pixel-green animate-pulse mt-4 font-pixel text-sm">
           {loadingMessage}
         </div>
       )}
 
       {answer && !isLoading && (
-        <div className="mt-4 p-4 rounded-lg bg-gray-700">
+        <div className="mt-4 p-4 bg-black/40 max-h-[60vh] overflow-y-auto">
           <TypeWriter 
             text={answer} 
-            typingSpeed={30} 
-            pauseBetweenSentences={800} 
+            speed={50}
           />
         </div>
       )}

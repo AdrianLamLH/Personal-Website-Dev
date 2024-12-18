@@ -1,7 +1,10 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Press_Start_2P } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const pixelFont = Press_Start_2P({ 
+  weight: '400',
+  subsets: ['latin'] 
+})
 
 export const metadata = {
   title: 'Adrian Lam - My Homepage',
@@ -15,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className} suppressHydrationWarning={true}>{children}</body>
+      <body className={pixelFont.className} suppressHydrationWarning={true}>{children}</body>
     </html>
   )
 }

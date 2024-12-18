@@ -23,19 +23,21 @@ export default function MyLinks() {
   return (
     <section className="py-12">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold mb-12 text-center">My Links</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center glow-text">
+          <span className="text-pixel-green">&gt;</span> CONNECT
+        </h2>
         <div className="max-w-md mx-auto space-y-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex justify-center space-x-8"
+            className="flex justify-center space-x-12"
           >
             <a
               href="https://github.com/AdrianLamLH"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-blue-400 transition-colors"
+              className="text-white hover:text-pixel-green hover:glow-text transition-all duration-300"
             >
               <Github size={32} />
             </a>
@@ -43,7 +45,7 @@ export default function MyLinks() {
               href="https://linkedin.com/in/AdrianLHLam"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-blue-400 transition-colors"
+              className="text-white hover:text-pixel-green hover:glow-text transition-all duration-300"
             >
               <Linkedin size={32} />
             </a>
@@ -52,11 +54,11 @@ export default function MyLinks() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="bg-gray-800 rounded-lg p-6"
+            className="bg-black/40 pixel-borders p-6"
           >
             <blockquote className="text-center">
-              <p className="text-lg mb-4">"{quote.text}"</p>
-              <footer className="text-sm text-gray-400">- {quote.author}</footer>
+              <p className="text-sm mb-4 text-pixel-green">"{quote.text}"</p>
+              <footer className="text-xs text-white/70">- {quote.author}</footer>
             </blockquote>
           </motion.div>
         </div>
@@ -64,4 +66,3 @@ export default function MyLinks() {
     </section>
   )
 }
-

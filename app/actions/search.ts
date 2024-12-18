@@ -114,7 +114,7 @@ Context about me: ${context}
 
 Question: ${query}
 
-Please answer in first person based on the context provided. If the information isn't in the context, say "I don't have that information in my background, but I'd be happy to tell you about my technical experience and projects instead. Respond in a friendly, FUN, personable, humourous, and excited TONE. The reply must be NO LONGER THAN 3-5 sentences long. Format the response to be line by line."`
+Please answer in first person based on the context provided. If the information isn't in the context, say "I don't have that information in my background, but I'd be happy to tell you about my technical experience and projects instead. Respond in a friendly, FUN, personable, humourous, and excited TONE. The reply must be NO LONGER THAN 3-5 sentences long. Format the response to be line by line. MAKE SURE TO STAY HUMBLE."`
           }
         ],
         model: 'claude-3-5-sonnet-20241022',

@@ -16,14 +16,11 @@ export default function GlowCursor() {
 
   return (
     <div
-      className="pointer-events-none fixed inset-0 z-50"
+      className="pointer-events-none fixed inset-0 z-50 cursor-glow"
       style={{
-        background: `radial-gradient(
-          120px at ${position.x}px ${position.y}px,
-          rgba(29, 78, 216, 0.10),
-          transparent 70%
-        )`
-      }}
+        '--x': `${position.x}px`,
+        '--y': `${position.y}px`
+      } as React.CSSProperties}
     />
   )
 }
