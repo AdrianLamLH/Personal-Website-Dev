@@ -4,6 +4,14 @@ import { motion } from 'framer-motion'
 import Search from './Search'
 
 export default function Hero() {
+  const loadingMessages = [
+    "Thinking about your question deeply...",
+    "Pondering the ins and outs...",
+    "Consulting the digital crystal ball...",
+    "Brewing up some answers...",
+    "Channeling my inner mindpalace...",
+  ];
+
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-4">
       <motion.div
@@ -22,9 +30,8 @@ export default function Hero() {
         transition={{ delay: 0.3, duration: 0.8 }}
         className="w-full"
       >
-        <Search />
+        <Search loadingMessages={loadingMessages} />
       </motion.div>
     </section>
   )
 }
-

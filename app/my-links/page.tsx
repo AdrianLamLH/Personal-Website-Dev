@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { Github, Linkedin } from 'lucide-react'
 import Image from 'next/image'
 import Header from '../components/Header'
+import GlowCursor from '../components/GlowCursor'
 
 
 const quotes = [
@@ -36,20 +37,22 @@ export default function MyLinks() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
+      <GlowCursor />
       <Header />
       <main className="pt-20">
         <section className="py-12">
           <div className="container mx-auto px-6">
-            <h2 className="text-4xl font-bold mb-12 text-center">My Links</h2>
+            <h2 className="text-4xl font-bold mb-12 text-center hover:text-blue-400 transition-colors duration-300">
+              My Links
+            </h2>
             
             {/* Photo Gallery */}
             <div className="mb-16 overflow-hidden">
               <div className="flex gap-4 animate-scroll">
-                {/* Double the photos array to create seamless loop */}
                 {[...photos, ...photos].map((photo, index) => (
                   <div 
                     key={index} 
-                    className="flex-shrink-0 w-72 h-72 relative rounded-lg overflow-hidden"
+                    className="flex-shrink-0 w-72 h-72 relative rounded-lg overflow-hidden transition-all duration-300"
                   >
                     <Image
                       src={photo.src}
@@ -73,7 +76,7 @@ export default function MyLinks() {
                   href="https://github.com/yourusername"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:text-blue-400 transition-colors"
+                  className="text-white hover:text-blue-400 transition-colors duration-300 hover:scale-110"
                 >
                   <Github size={32} />
                 </a>
@@ -81,7 +84,7 @@ export default function MyLinks() {
                   href="https://linkedin.com/in/yourusername"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:text-blue-400 transition-colors"
+                  className="text-white hover:text-blue-400 transition-colors duration-300 hover:scale-110"
                 >
                   <Linkedin size={32} />
                 </a>
@@ -90,7 +93,7 @@ export default function MyLinks() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="bg-gray-800 rounded-lg p-6"
+                className="bg-gray-800 rounded-lg p-6 hover:ring-2 hover:ring-blue-400 transition-all duration-300"
               >
                 <blockquote className="text-center">
                   <p className="text-lg mb-4">"{quote.text}"</p>

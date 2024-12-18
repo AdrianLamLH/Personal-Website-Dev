@@ -85,13 +85,17 @@ export default function Projects() {
           <h3 className="text-2xl font-semibold mb-8 text-blue-400">Professional Experience</h3>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {workExperiences.map((work, index) => (
-              <motion.div
-                key={work.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2, duration: 0.5 }}
-                className="bg-gray-800/50 rounded-lg p-6 hover:shadow-lg transition-all hover:bg-gray-800 h-full flex flex-col"
-              >
+            <motion.div
+              key={work.id}
+              initial={{ opacity: 0, y: 10 }} // Reduced y offset
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ 
+                delay: index * 0.1, // Reduced delay
+                duration: 0.3,      // Reduced duration
+                ease: "easeOut"     // Added easing
+              }}
+              className="bg-gray-800/50 rounded-lg p-6 hover:shadow-lg transition-all hover:bg-gray-800 h-full flex flex-col"
+            >
                 <div className="flex flex-col justify-between items-start mb-4">
                   <div>
                     <h4 className="text-xl font-semibold text-white mb-1">{work.role}</h4>
@@ -125,9 +129,13 @@ export default function Projects() {
             {personalProjects.map((project, index) => (
               <motion.div
                 key={project.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2, duration: 0.5 }}
+                transition={{ 
+                  delay: index * 0.1,
+                  duration: 0.3,
+                  ease: "easeOut"
+                }}
                 className="bg-gray-800/50 rounded-lg p-6 hover:shadow-lg transition-all hover:bg-gray-800"
               >
                 <div className="flex justify-between items-start mb-4">

@@ -22,21 +22,72 @@ export async function searchDocuments(query: string): Promise<SearchResponse> {
       - Relevant coursework: Linear Algebra, Optimization, Machine Learning, Probability, Data Structures & Algorithms
 
       Professional Experience:
-      - Currently working at Asurion as an ML Engineer on building a robust technical support troubleshooter LLM service bot, building guardrails and engineering a multimodal framework to enable voice-to-voice accesiblity
-      - Previously worked as a Data Scientist at Towngas, where I built ETL pipelines using PySpark and developed ML models
-      - Led data consulting projects at UCLA Data Resolutions, analyzing AAPI community real estate trends
-      - Developed web scrapers and database solutions as a Python Developer for The American Academy of Pediatric Neuropsychology
-      - Engineered Chrome extensions and Twitter bots as a Software Engineer Intern at Change For Change
+      - Currently at Asurion as ML Engineer:
+        • Leading team of 3 interns on GraphRAG system with Neo4j
+        • Building customer-facing LLM chatbot prioritizing accuracy over creativity
+        • Conducting A/B tests with LLM evaluator for problem accuracy
+        • Establishing 9-month timeline milestones and coordinating with mentors
 
-      Research Experience:
-      - Software Engineer at UCLA's Sensing and Robotics for Infrastructure Lab, developing GNN-based Roadwork Prioritization Platform
-      - Research Analyst at UCLA Data Resolutions, working on Wikipedia article recommender systems using PyTorch
+      - At Towngas as Data Scientist:
+        • Processed 300TB datalake covering 2 million households over a decade
+        • Developed XGBoost Classification model resilient to imbalanced classes
+        • Used AWS Athena for data processing, implemented cross-validation and gridsearch
+        • Achieved >20% increase in precision at score of 85 while maintaining high recall
+        • Saved company projected $2000/week in technician deployment costs
 
-      Notable Achievements:
-      - Selected by UCLA Transportation in AWS & Slalom Innovation Challenge for ML-driven parking solution
-      - Led multiple teams in developing and deploying production-ready applications
-      - Reduced technician deployment redundancies by 30% through ML model optimization at Towngas
-      - Implemented performance improvements reducing platform latency from 7 to 2 seconds in infrastructure projects
+      - At UCLA SRI Lab as Project Lead:
+        • Led 8-person Data Platforms team
+        • Consolidated 18 months of field surveys (50K+ inspection points)
+        • Integrated 5 open-source GIS datasets and 15+ street condition parameters
+        • Created graph representation of hillside road network with centrality measures
+        • Reduced missing data from 25% to <5% using Random Forest imputation
+        • Implemented dual refresh cycles: weekly for core metrics, yearly for baseline
+        • Improved query time from 7s to 2s
+
+      - At DataRes:
+        • Consulting: Analyzed real estate engagement trends using RF models, identified blog posts as key engagement driver
+        • Research: Revised GNN explainer for Wikipedia network analysis, presented at university-wide gala
+        • Used feature importance analysis to direct future community outreach plans
+
+      - At AAPN as Python Developer:
+        • Built web scraper across public databases
+        • Implemented unsupervised clustering for patient demographics
+        • Created structured CSV format for record organization
+        • Doubled conference visitors through improved contactless outreach
+        • Facilitated easier appointment scheduling through similarity matching
+
+      - At Change For Change as Software Engineer Intern:
+        • Built Chrome extension from wireframe to production for e-commerce donation platform
+        • Implemented jsInjection for direct payment window access
+        • Led 4-person development team for RESTful Twitter bot
+        • Designed user portal wireframes in Figma
+
+      Notable Projects:
+      - Anthropic & Menlo Builder Day (2nd place, $55,000):
+        • Led 3-person team competing against industry leaders
+        • Researched LLM safety and identified key blind spots
+        • Successfully solved Google's demo CAPTCHAs including image classification
+        • Collaborated with Anthropic engineers and cybersecurity experts
+        • Created challenges specifically targeting LLM weaknesses
+
+      - AWS & Slalom Innovation Challenge:
+        • Selected by UCLA Transportation for ML-driven parking solution
+        • Served as tech supervisor for webapp design in Figma
+        • Collaborated with Slalom CTO and senior developers
+        • Built MVP for multi-modal transportation solution
+        • Project selected for campus-wide implementation
+
+      Learning from Failure:
+      - LA Hacks Experience:
+        • Led 3-person team building Snapphrase, a language learning social platform
+        • Project scope exceeded time constraints
+        • Learned valuable lessons in time management and scope control
+        • Applied lessons to later success at Anthropic Hackathon through effective resource use and proper work delegation
+
+      Personal Interests:
+      - Performed as Bass singer in UCLA's On That Note acapella group
+      - Active in sports: Basketball, Badminton, Rock Climbing
+      - Film enthusiast: Particularly enjoy Interstellar, Inception, and Look Back by Tatsuki Fujimoto
 
       Speaking Style Notes:
       - Professional yet approachable
@@ -63,10 +114,10 @@ Context about me: ${context}
 
 Question: ${query}
 
-Please answer in first person based on the context provided. If the information isn't in the context, say "I don't have that information in my background, but I'd be happy to tell you about my technical experience and projects instead."`
+Please answer in first person based on the context provided. If the information isn't in the context, say "I don't have that information in my background, but I'd be happy to tell you about my technical experience and projects instead. Respond in a friendly, FUN, personable, humourous, and excited TONE. The reply must be NO LONGER THAN 3-5 sentences long. Format the response to be line by line."`
           }
         ],
-        model: 'claude-2.1',
+        model: 'claude-3-5-sonnet-20241022',
         max_tokens: 300
       })
     })
