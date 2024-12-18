@@ -44,7 +44,7 @@ export default function Search({ loadingMessages }: SearchProps) {
     try {
       const response = await searchDocuments(query)
       setAnswer(response.answer)
-    } catch (error) {
+    } catch {
       setAnswer('Sorry, something went wrong. Please try again.')
     } finally {
       setIsLoading(false)
